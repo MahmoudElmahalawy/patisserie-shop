@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo {
+  font-family: 'Rakkas', cursive;
+}
+
+.text-gradient {
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+	color: darkblue;
+  background: linear-gradient(to right, rgb(255, 143, 221), rgb(63, 133, 224));
+  color: transparent;
+  background-clip: text;
+}
+
+.text-gradient::selection {
+  color: white;
+  background: darkorchid;
+}
