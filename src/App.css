@@ -1,0 +1,67 @@
+:root {
+    --mainBlack: black;
+    --lightGrey: #686868;
+    --mainWhite: #fffbfb;
+    --mainDark: #232528;
+    --mainPurple: darkorchid;
+}
+
+body {
+    font-family: 'Almarai', sans-serif !important;
+    background: var(--mainWhite) !important;
+    color: var(--mainDark) !important;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 2.5em;
+    padding-left: 0.5rem;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: var(--mainDark);
+    transition: all 0.5s linear;
+}
+
+.cart {
+    color: var(--mainDark);
+    padding: 1.25rem;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    transition: all 0.5s linear;
+}
+
+.cart:hover {
+    background-color: var(--mainDark);
+    color: var(--mainWhite);
+}
+
+.text-title {
+    font-family: 'Rakkas', cursive;
+}
+
+.text-purple {
+    color: var(--mainPurple) !important;
+}
+
+.text-bright {
+    color: var(--lightGrey) !important;
+}
+
+.text-gradient {
+	font-weight: bold;
+	text-align: center;
+	color: var(--mainDark);
+    background: linear-gradient(to right, #d69595, #b9c9f7);
+    color: transparent;
+    background-clip: text;
+    padding-top: 1rem;
+}
+
+.text-gradient::selection {
+    color: white;
+    background: darkorchid;
+}
