@@ -16,8 +16,8 @@ body {
     display: inline-block;
     font-size: 2.5em;
     padding-left: 0.5rem;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
 }
 
 .logo:hover {
@@ -29,8 +29,8 @@ body {
 .cart {
     color: var(--mainDark);
     padding: 1.25rem;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
     transition: all 0.5s linear;
 }
 
