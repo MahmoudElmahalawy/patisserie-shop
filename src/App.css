@@ -1,67 +1,100 @@
 :root {
-    --mainBlack: black;
-    --lightGrey: #686868;
-    --mainWhite: #fffbfb;
-    --mainDark: #232528;
-    --mainPurple: darkorchid;
+  --mainBlack: black;
+  --lightGrey: #686868;
+  --mainWhite: #fffbfb;
+  --mainDark: #232528;
+  --mainPurple: darkorchid;
 }
 
 body {
-    font-family: 'Almarai', sans-serif !important;
-    background: var(--mainWhite) !important;
-    color: var(--mainDark) !important;
+  font-family: "Almarai", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
 }
 
 .logo {
-    display: inline-block;
-    font-size: 2.5em;
-    padding-left: 0.5rem;
-    border-bottom: 4px solid black;
-    border-left: 4px solid black;
+  display: inline-block;
+  font-size: 2.5em;
+  padding-left: 0.5rem;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
 }
 
 .logo:hover {
-    text-decoration: none;
-    color: var(--mainDark);
-    transition: all 0.5s linear;
+  text-decoration: none;
+  color: var(--mainDark);
+  transition: all 0.5s linear;
 }
 
 .cart {
-    color: var(--mainDark);
-    padding: 1.25rem;
-    border-bottom: 4px solid black;
-    border-right: 4px solid black;
-    transition: all 0.5s linear;
+  color: var(--mainDark);
+  padding: 1.25rem;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  transition: all 0.5s linear;
 }
 
 .cart:hover {
-    background-color: var(--mainDark);
-    color: var(--mainWhite);
+  background-color: var(--mainDark);
+  color: var(--mainWhite);
 }
 
 .text-title {
-    font-family: 'Rakkas', cursive;
+  font-family: "Rakkas", cursive;
 }
 
 .text-purple {
-    color: var(--mainPurple) !important;
+  color: var(--mainPurple) !important;
 }
 
 .text-bright {
-    color: var(--lightGrey) !important;
+  color: var(--lightGrey) !important;
 }
 
 .text-gradient {
-	font-weight: bold;
-	text-align: center;
-	color: var(--mainDark);
-    background: linear-gradient(to right, #d69595, #b9c9f7);
-    color: transparent;
-    background-clip: text;
-    padding-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--mainDark);
+  background: linear-gradient(to right, #d69595, #b9c9f7);
+  color: transparent;
+  background-clip: text;
+  padding-top: 1rem;
 }
 
 .text-gradient::selection {
-    color: white;
-    background: darkorchid;
+  color: white;
+  background: darkorchid;
+}
+
+.cart-item {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-black {
+  background: transparent;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--mainDark) !important;
+}
+
+.btn-black:hover {
+  background: var(--mainDark);
+  color: var(--mainWhite);
+  transition: all 0.5 linear;
+}
+
+.btn-remove {
+  width: 2.5rem;
+  margin: 0 auto;
+}
+
+.btn-remove:hover {
+  background-color: var(--mainDark);
+  color: var(--mainWhite);
+  padding: 0.25rem;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.5s linear;
 }

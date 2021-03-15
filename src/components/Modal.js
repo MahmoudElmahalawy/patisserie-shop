@@ -36,8 +36,9 @@ export default class Modal extends Component {
                         className="modal-img"
                       />
                       <h5 className="text-muted">السعر {price}</h5>
-                      <Link to="/">
+                      <Link to="#">
                         <BackToProducts
+                          inModal
                           className="my-3"
                           onClick={() => {
                             closeModal();
