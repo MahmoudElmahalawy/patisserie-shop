@@ -55,7 +55,7 @@ class ProductProvider extends Component {
         return { products: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
-        console.log(this.state.cart);
+        this.calcTotals();
       }
     );
   };
@@ -73,20 +73,102 @@ class ProductProvider extends Component {
     });
   };
 
-  incrementCount = () => {
-    console.log("increment fn");
+  incrementCount = (id) => {
+    let tempCart = [...this.state.cart];
+    let selectedProduct = tempCart.find((item) => item.id === id);
+    const indexOfProduct = tempCart.indexOf(selectedProduct);
+
+    const product = tempCart[indexOfProduct];
+
+    product.count++;
+    product.total = product.count * product.price;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+        };
+      },
+      () => {
+        this.calcTotals();
+      }
+    );
   };
 
-  decrementCount = () => {
-    console.log("decrement fn");
+  decrementCount = (id) => {
+    let tempCart = [...this.state.cart];
+    let selectedProduct = tempCart.find((item) => item.id === id);
+    const indexOfProduct = tempCart.indexOf(selectedProduct);
+
+    const product = tempCart[indexOfProduct];
+
+    if (product.count !== 1) {
+      product.count--;
+      product.total = product.count * product.price;
+    } else {
+      return;
+    }
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+        };
+      },
+      () => {
+        this.calcTotals();
+      }
+    );
   };
 
-  removeItem = () => {
-    console.log("remove fn");
+  removeItem = (id) => {
+    let tempProducts = [...this.state.products];
+    let tempCart = [...this.state.cart];
+    const indexOfProduct = tempProducts.indexOf(this.getItem(id));
+    let removedProduct = tempProducts[indexOfProduct];
+
+    tempCart = tempCart.filter((item) => item.id !== id);
+    removedProduct.inCart = false;
+    removedProduct.count = 0;
+    removedProduct.total = 0;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          products: [...tempProducts],
+        };
+      },
+      () => {
+        this.calcTotals();
+      }
+    );
   };
 
   clearCart = () => {
-    console.log("clear cart");
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        this.copyProducts();
+        this.calcTotals();
+      }
+    );
+  };
+
+  calcTotals = () => {
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const totalBeforeTaxes = subTotal / 1.14;
+    const taxes = parseFloat(totalBeforeTaxes * 0.14).toFixed(2);
+    this.setState(() => {
+      return {
+        cartSubtotal: parseFloat(totalBeforeTaxes.toFixed(2)),
+        cartTax: taxes,
+        cartTotal: subTotal,
+      };
+    });
   };
 
   render() {

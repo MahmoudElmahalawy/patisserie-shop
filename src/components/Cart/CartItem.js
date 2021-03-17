@@ -28,7 +28,7 @@ export default function CartItem({ item, value }) {
           <span
             className="btn btn-black mx-1"
             onClick={() => {
-              decrementCount();
+              decrementCount(id);
             }}
           >
             -
@@ -39,7 +39,7 @@ export default function CartItem({ item, value }) {
           <span
             className="btn btn-black mx-1"
             onClick={() => {
-              incrementCount();
+              incrementCount(id);
             }}
           >
             +
@@ -47,7 +47,7 @@ export default function CartItem({ item, value }) {
         </div>
       </div>
       <div className="col-10 mx-auto align-self-center col-lg-2">
-        <div className="btn-remove" onClick={() => removeItem()}>
+        <div className="btn-remove" onClick={() => removeItem(id)}>
           <TrashIcon />
         </div>
       </div>

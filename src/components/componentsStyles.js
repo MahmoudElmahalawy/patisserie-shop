@@ -127,6 +127,37 @@ export const AddBtn = styled.button`
   }
 `;
 
+export const CartTotals = styled.div`
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
+  .calcs {
+    float: left;
+  }
+`;
+
+export const ClearCartBtn = styled.button`
+  display: block;
+  width: 70px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background: transparent;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--mainDark) !important;
+
+  &:hover {
+    background: red;
+    color: var(--mainWhite);
+    transition: all 0.25s linear;
+  }
+`;
+
 export const CartIcon = () => (
   <svg
     className="w-6 h-6"
